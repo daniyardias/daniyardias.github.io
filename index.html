@@ -73,13 +73,21 @@
    <script>
     window.onload = function() {
         var params = new URLSearchParams(window.location.search);
-        var imagePath = params.get("image"); // Получаем значение параметра "image" из URL
+        var imagePath = params.get("image"); 
 
         if (imagePath) {
-            // Вставляем значение параметра "image" в атрибут src элемента img
             document.getElementById("slider").src = imagePath;
         }
-    };
+        function showNextImage() { 
+                if (currentIndex >= imagePaths.length) { 
+                    currentIndex = 0; 
+                } 
+                imageElement.src = imagePaths[currentIndex]; 
+                currentIndex++; 
+            } 
+ 
+            setInterval(showNextImage, 3000); 
+        }; 
 </script>
          <div id="image-container">
             <img id="slider" src="image1.jpg" width="400" height="300"> 
