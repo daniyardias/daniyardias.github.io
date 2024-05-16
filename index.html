@@ -70,9 +70,11 @@
    
 
    <script>
-    window.onload = function() {
-        var params = new URLSearchParams(window.location.search);
-        var imagePath = params.get("image");
+    window.onload = function() {    var params = new URLSearchParams(window.location.search);
+    var imagePath = params.get("image");
+    if (imagePath) {
+        imageElement.src = imagePath;    } else {
+    }};
 
         var imagePaths = ["image1.jpg", "image2.jpeg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg", "image7.jpg", "image8.jpg", "image9.jpg" , "image10.jpg"];
         var currentIndex = 0;
@@ -91,7 +93,6 @@
         }
 
         setInterval(showNextImage, 3000);
-    };
     var allowedImagePaths = ["image1.jpg", "image2.jpeg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg", "image7.jpg", "image8.jpg", "image9.jpg" , "image10.jpg"];
 if (imagePath && allowedImagePaths.includes(imagePath)) { 
     imageElement.src = imagePath;} else {
