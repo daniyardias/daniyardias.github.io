@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Страница Диаса и Данияра</title>
+<title>Часы с рамкой ASCII</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -21,27 +21,24 @@
         padding: 20px;
         border: 3px solid #333;
         border-radius: 10px;
-        white-space: nowrap;    
-    }
-    .page-text {
-        font-size: 24px;
-        text-align: top;
-        color: #333;
+        white-space: nowrap;
     }
 </style>
 </head>
 <body>
-    <div class="page-text">
-        Эта страница Диаса и Данияра!!!
-    </div>
-   
-    <div id="clock"></div>
+    <pre id="clock">
+  ┌────────────┐
+  │            │
+  └────────────┘
+    </pre>
 
     <script>
+        // Функция для добавления ведущих нулей к числам < 10 (например, 9 => "09")
         function leadingZero(num) {
             return num < 10 ? "0" + num : num;
         }
 
+        // Функция для обновления времени на часах
         function updateClock() {
             var now = new Date();
             var hours = now.getHours();
@@ -50,14 +47,17 @@
 
             var formattedTime = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
 
+            // Обновляем содержимое элемента с идентификатором clock
             document.getElementById("clock").textContent = 
                 "  ┌────────────┐\n" +
                 "  │ " + formattedTime + " │\n" +
                 "  └────────────┘";
         }
 
+        // Обновляем время каждую секунду
         setInterval(updateClock, 1000);
 
+        // Запускаем функцию updateClock сразу после загрузки страницы
         updateClock();
     </script>
 </body>
