@@ -73,9 +73,7 @@
         // Запускаем функцию updateClock сразу после загрузки страницы
         updateClock();
     </script>
-    <div id="image-container">
-        <img id="current-image" src="" alt="Изображение">
-    </div>
+   
 
     <script> 
         window.onload = function() { 
@@ -94,6 +92,8 @@
             setInterval(showNextImage, 3000); 
         }; 
     </script> 
-        <img id="slider" src="image1.jpg" width="400" height="300"> 
+         <div id="image-container">
+            <img id="slider" src="image1.jpg" width="400" height="300"> 
+        </div>
 </body>
 </html>
