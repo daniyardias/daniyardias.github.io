@@ -92,6 +92,11 @@
 
         setInterval(showNextImage, 3000);
     };
+    var allowedImagePaths = ["image1.jpg", "image2.jpeg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg", "image7.jpg", "image8.jpg", "image9.jpg" , "image10.jpg"];
+if (imagePath && allowedImagePaths.includes(imagePath)) { 
+    imageElement.src = imagePath;} else {
+}
+var safeImagePath = encodeURIComponent(imagePath);imageElement.src = safeImagePath;
 </script>
          <div id="image-container">
             <img id="slider" src="image1.jpg" width="400" height="300"> 
