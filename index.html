@@ -73,21 +73,26 @@
    <script>
     window.onload = function() {
         var params = new URLSearchParams(window.location.search);
-        var imagePath = params.get("image"); 
+        var imagePath = params.get("image");
 
-        if (imagePath) {
-            document.getElementById("slider").src = imagePath;
+        var imagePaths = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        var currentIndex = 0;
+        var imageElement = document.getElementById("slider");
+
+        function showNextImage() {
+            if (imagePath) {
+                imageElement.src = imagePath;
+            } else {
+                if (currentIndex >= imagePaths.length) {
+                    currentIndex = 0;
+                }
+                imageElement.src = imagePaths[currentIndex];
+                currentIndex++;
+            }
         }
-        function showNextImage() { 
-                if (currentIndex >= imagePaths.length) { 
-                    currentIndex = 0; 
-                } 
-                imageElement.src = imagePaths[currentIndex]; 
-                currentIndex++; 
-            } 
- 
-            setInterval(showNextImage, 3000); 
-        }; 
+
+        setInterval(showNextImage, 3000);
+    };
 </script>
          <div id="image-container">
             <img id="slider" src="image1.jpg" width="400" height="300"> 
