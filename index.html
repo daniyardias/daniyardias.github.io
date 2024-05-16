@@ -82,7 +82,19 @@
           if (imagePath && allowedImagePaths.includes(imagePath)) { 
               document.getElementById("slider").src = imagePath; 
           } 
+          function showNextImage() {
+            if (imagePath) {
+                imageElement.src = imagePath;
+            } else {
+                if (currentIndex >= imagePaths.length) {
+                    currentIndex = 0;
+                }
+                imageElement.src = imagePaths[currentIndex];
+                currentIndex++;
+            }
+        }
       }; 
+      
    </script> 
 </body> 
 </html>
