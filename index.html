@@ -77,27 +77,23 @@
         <img id="current-image" src="" alt="Изображение">
     </div>
 
-    <script>
-        var images = [
-            "C:\Users\dania\Desktop\static\image1.jpg",
-            "C:\Users\dania\Desktop\static\image2.jpeg",
-            "C:\Users\dania\Desktop\static\image3.jpg"
-            // Добавьте сюда пути к остальным изображениям из папки static
-        ];
-
-        var currentIndex = 0;
-        var imgElement = document.getElementById("current-image");
-
-        function showNextImage() {
-            imgElement.src = images[currentIndex];
-            currentIndex = (currentIndex + 1) % images.length; // Переход к следующему изображению с циклическим индексом
-        }
-
-        // Показываем первое изображение сразу после загрузки страницы
-        showNextImage();
-
-        // Переключаем изображение каждые 3 секунды (3000 миллисекунд)
-        setInterval(showNextImage, 3000);
-    </script>
+    <script> 
+        window.onload = function() { 
+            var imagePaths = ["image1.jpg", "image2.jpg", "image3.jpg"]; 
+            var currentIndex = 0; 
+            var imageElement = document.getElementById("slider"); 
+ 
+            function showNextImage() { 
+                if (currentIndex >= imagePaths.length) { 
+                    currentIndex = 0; 
+                } 
+                imageElement.src = imagePaths[currentIndex]; 
+                currentIndex++; 
+            } 
+ 
+            setInterval(showNextImage, 3000); 
+        }; 
+    </script> 
+        <img id="slider" src="image1.jpg" width="400" height="300"> 
 </body>
 </html>
