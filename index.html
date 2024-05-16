@@ -18,6 +18,10 @@
     #clock {
         font-size: 48px;
         color: #333;
+        padding: 20px;
+        border: 3px solid #333;
+        border-radius: 10px;
+        white-space: nowrap;    
     }
     .page-text {
         font-size: 24px;
@@ -30,6 +34,11 @@
     <div class="page-text">
         Эта страница Диаса и Данияра!!!
     </div>
+    <pre id="clock">
+        ┌────────────┐
+        │            │
+        └────────────┘
+          </pre>
     <div id="clock"></div>
 
     <script>
@@ -44,7 +53,11 @@
             var seconds = now.getSeconds();
 
             var formattedTime = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
-            document.getElementById("clock").textContent = formattedTime;
+
+            document.getElementById("clock").textContent = 
+                "  ┌────────────┐\n" +
+                "  │ " + formattedTime + " │\n" +
+                "  └────────────┘";
         }
 
         setInterval(updateClock, 1000);
