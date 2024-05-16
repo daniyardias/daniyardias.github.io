@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Сообщение в рамке ASCII</title>
+<title>Часы с рамкой ASCII</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -15,45 +15,50 @@
         background-color: #f5f5f5;
     }
 
-    #message-frame {
-        font-size: 24px;
+    #clock-frame {
+        font-size: 48px;
         color: #333;
-        padding: 20px;
-        border: 3px solid #333;
-        border-radius: 10px;
+        padding: 30px;
+        border: 5px solid #333;
+        border-radius: 20px;
         white-space: pre;
     }
 </style>
 </head>
 <body>
-    <pre id="message-frame">
- ┌────────────┐
- │            │
- └────────────┘
+    <pre id="clock-frame">
+  ┌──────────────────┐
+  │                  │
+  └──────────────────┘
     </pre>
 
     <script>
-        // Функция для обновления сообщения в рамке
-        function updateMessage(message) {
-            var messageLines = message.split("\n");
-            var topLine = " ┌────────────┐";
-            var bottomLine = " └────────────┘";
-
-            var framedMessage = topLine + "\n";
-            messageLines.forEach(function(line) {
-                framedMessage += " │ " + line + " │\n";
-            });
-            framedMessage += bottomLine;
-
-            // Обновляем содержимое элемента с идентификатором message-frame
-            document.getElementById("message-frame").textContent = framedMessage;
+        // Функция для добавления ведущих нулей к числам < 10 (например, 9 => "09")
+        function leadingZero(num) {
+            return num < 10 ? "0" + num : num;
         }
 
-        // Задаем сообщение для отображения
-        var myMessage = "Привет, это сообщение\nв рамке ASCII на сайте!";
+        // Функция для обновления времени на часах
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
 
-        // Обновляем сообщение в рамке
-        updateMessage(myMessage);
+            var formattedTime = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
+
+            // Обновляем содержимое элемента с идентификатором clock-frame
+            document.getElementById("clock-frame").textContent =
+                "  ┌──────────────────┐\n" +
+                "  │ " + formattedTime + " │\n" +
+                "  └──────────────────┘";
+        }
+
+        // Обновляем время каждую секунду
+        setInterval(updateClock, 1000);
+
+        // Запускаем функцию updateClock сразу после загрузки страницы
+        updateClock();
     </script>
 </body>
 </html>
