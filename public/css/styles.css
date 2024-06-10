@@ -1,0 +1,117 @@
+body {
+  background-color: #ccc; /* Серый фон */
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto; /* Форма посередине страницы */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px; /* Надпись "Регистрация" над формой */
+}
+
+form {
+  text-align: left; /* Выравнивание содержимого формы по левому краю */
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="password"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="email"]::placeholder {
+  color: #777; /* Цвет текста placeholder для поля email */
+}
+
+input[type="password"]::placeholder {
+  color: #777; /* Цвет текста placeholder для поля пароля */
+}
+body {
+  background-color: #f9f9f9; /* Серый фон */
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto; /* Форма посередине страницы */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px; /* Надпись "Регистрация" над формой */
+}
+
+form {
+  text-align: left; /* Выравнивание содержимого формы по левому краю */
+}
+
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black; /* Черная рамка для всех полей и кнопки */
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="tel"]::placeholder {
+  color: #ffffff; /* Цвет текста placeholder для всех полей */
+}
+
+button[type="submit"] {
+  background-color: #8a2be2; /* Фиолетовый цвет для кнопки "Регистрация" */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: #6a1cb2; /* Цвет кнопки при наведении */
+}
+
+input[type="tel"]::placeholder {
+  color: #777; /* Цвет текста placeholder для поля телефона */
+}
+
+button[type="submit"] {
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #8a2be2; /* Фиолетовый цвет для кнопки "Регистрация" */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: #6a1cb2; /* Цвет кнопки при наведении */
+}

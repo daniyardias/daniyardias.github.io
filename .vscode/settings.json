@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "zxczxc",
+            "group": "zxczxc",
+            "database": "${workspaceFolder:daniyardias.github.io}/database.db"
+        }
+    ]
+}
